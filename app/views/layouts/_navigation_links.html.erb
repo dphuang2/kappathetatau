@@ -4,3 +4,9 @@
   </li>
 <% end %>
 
+<% if current_user.try(:brother?) %>
+  <li>
+    <a href="#">Upload Resume</a>
+  </li>
+<% end %>
+
