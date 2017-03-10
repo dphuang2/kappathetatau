@@ -5,4 +5,5 @@ Rails.application.routes.draw do
     registrations: 'my_devise/registrations'
   }
   resources :users
+  get '/resumes', to: 'resumes#index'
 end
