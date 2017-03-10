@@ -1,0 +1,49 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AddNameToUsers	./db/migrate/20140228010616_add_name_to_users.rb	/^class AddNameToUsers < ActiveRecord::Migration$/;"	c
+AddRoleToUsers	./db/migrate/20140228010617_add_role_to_users.rb	/^class AddRoleToUsers < ActiveRecord::Migration$/;"	c
+Application	./config/application.rb	/^  class Application < Rails::Application$/;"	c	class:RailsDevisePundit
+ApplicationCable	./app/channels/application_cable/channel.rb	/^module ApplicationCable$/;"	m
+ApplicationCable	./app/channels/application_cable/connection.rb	/^module ApplicationCable$/;"	m
+ApplicationController	./app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
+ApplicationHelper	./app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+ApplicationJob	./app/jobs/application_job.rb	/^class ApplicationJob < ActiveJob::Base$/;"	c
+ApplicationMailer	./app/mailers/application_mailer.rb	/^class ApplicationMailer < ActionMailer::Base$/;"	c
+ApplicationRecord	./app/models/application_record.rb	/^class ApplicationRecord < ActiveRecord::Base$/;"	c
+Channel	./app/channels/application_cable/channel.rb	/^  class Channel < ActionCable::Channel::Base$/;"	c	class:ApplicationCable
+Connection	./app/channels/application_cable/connection.rb	/^  class Connection < ActionCable::Connection::Base$/;"	c	class:ApplicationCable
+CreateAdminService	./app/services/create_admin_service.rb	/^class CreateAdminService$/;"	c
+DeviseCreateUsers	./db/migrate/20140228010614_devise_create_users.rb	/^class DeviseCreateUsers < ActiveRecord::Migration$/;"	c
+Features	./spec/support/helpers/session_helpers.rb	/^module Features$/;"	m
+PunditHelper	./config/initializers/pundit.rb	/^module PunditHelper$/;"	m
+RailsDevisePundit	./config/application.rb	/^module RailsDevisePundit$/;"	m
+SessionHelpers	./spec/support/helpers/session_helpers.rb	/^  module SessionHelpers$/;"	m	class:Features
+User	./app/models/user.rb	/^class User < ApplicationRecord$/;"	c
+UserPolicy	./app/policies/user_policy.rb	/^class UserPolicy$/;"	c
+UsersController	./app/controllers/users_controller.rb	/^class UsersController < ApplicationController$/;"	c
+VisitorsController	./app/controllers/visitors_controller.rb	/^class VisitorsController < ApplicationController$/;"	c
+call	./app/services/create_admin_service.rb	/^  def call$/;"	f	class:CreateAdminService
+change	./db/migrate/20140228010614_devise_create_users.rb	/^  def change$/;"	f	class:DeviseCreateUsers
+change	./db/migrate/20140228010616_add_name_to_users.rb	/^  def change$/;"	f	class:AddNameToUsers
+change	./db/migrate/20140228010617_add_role_to_users.rb	/^  def change$/;"	f	class:AddRoleToUsers
+configure_permitted_parameters	./app/controllers/application_controller.rb	/^  def configure_permitted_parameters$/;"	f	class:ApplicationController
+destroy	./app/controllers/users_controller.rb	/^  def destroy$/;"	f	class:UsersController
+destroy?	./app/policies/user_policy.rb	/^  def destroy?$/;"	f	class:UserPolicy
+index	./app/controllers/users_controller.rb	/^  def index$/;"	f	class:UsersController
+index?	./app/policies/user_policy.rb	/^  def index?$/;"	f	class:UserPolicy
+initialize	./app/policies/user_policy.rb	/^  def initialize(current_user, model)$/;"	f	class:UserPolicy
+secure_params	./app/controllers/users_controller.rb	/^  def secure_params$/;"	f	class:UsersController
+set_default_role	./app/models/user.rb	/^  def set_default_role$/;"	f	class:User
+show	./app/controllers/users_controller.rb	/^  def show$/;"	f	class:UsersController
+show?	./app/policies/user_policy.rb	/^  def show?$/;"	f	class:UserPolicy
+sign_up_with	./spec/support/helpers/session_helpers.rb	/^    def sign_up_with(email, password, confirmation)$/;"	f	class:Features.SessionHelpers
+signin	./spec/support/helpers/session_helpers.rb	/^    def signin(email, password)$/;"	f	class:Features.SessionHelpers
+system!	./bin/setup	/^def system!(*args)$/;"	f
+system!	./bin/update	/^def system!(*args)$/;"	f
+update	./app/controllers/users_controller.rb	/^  def update$/;"	f	class:UsersController
+update?	./app/policies/user_policy.rb	/^  def update?$/;"	f	class:UserPolicy
+user_not_authorized	./config/initializers/pundit.rb	/^  def user_not_authorized$/;"	f	class:PunditHelper
