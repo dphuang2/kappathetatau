@@ -21,7 +21,7 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :graduation_date %>
+      <%= f.label :graduation_year %>
       <%= f.collection_select :year, User::GRADUATION.map { |value| [ value, value ] }, :first, :second, {prompt: @user.year? ? @user.year : "Select Year" }, {class: "form-control"}%>
     </div>
 

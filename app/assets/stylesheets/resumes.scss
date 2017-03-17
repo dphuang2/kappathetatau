@@ -2,26 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-table td,
-table th{
-  border: 1px solid silver;
-}
-.tablesorter-header{
-  position: relative;
-}
-.tablesorter-headerDesc:after,
-.tablesorter-headerAsc:after{
-  content: ' ';
-  float: right;
-  position: absolute;
-  right: 1px;
-  border: 8px solid transparent;
-}
-.tablesorter-headerDesc:after{
-  bottom: 11px;
-  border-bottom-color: silver;
-}
-.tablesorter-headerAsc:after{
-  top: 11px;
-  border-top-color: silver;
+#resume-table{
+  .tablesorter-header{
+    position: relative;
+  }
+  .tablesorter-headerDesc:after,
+  .tablesorter-headerAsc:after{
+    content: ' ';
+    float: right;
+    position: absolute;
+    right: 1px;
+    border: 8px solid transparent;
+  }
+  .tablesorter-headerDesc:after{
+    bottom: 11px;
+    border-bottom-color: silver;
+  }
+  .tablesorter-headerAsc:after{
+    top: 11px;
+    border-top-color: silver;
+  }
 }
