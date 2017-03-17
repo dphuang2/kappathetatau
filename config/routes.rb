@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :users
   get '/resumes', to: 'resumes#index'
   get '/edit', to: 'resumes#edit'
+  get '/download', to: 'resumes#download'
   post '/upload', to: 'resumes#upload'
   post '/info', to: 'resumes#info'
 end

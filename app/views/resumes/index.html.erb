@@ -1,5 +1,3 @@
-<% @users.each do |u| %>
-<% end %>
 <div class="table-responsive">
   <table id="resume-table" class="table table-condensed table-hover tablesorter">
     <thead>
@@ -34,6 +32,10 @@
     </tbody>
   </table>
 </div>
+
+<% if false %>
+  <%= link_to "Download", {:controller => "resumes", :action => "download"}%>
+<% end %>
 
 <script>
   $(document).ready(function() {

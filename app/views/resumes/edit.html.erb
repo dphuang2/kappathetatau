@@ -3,7 +3,7 @@
     <h3>Upload Resume</h3>
 
     <div class="form-group">
-      <%= f.label :document %>
+      <label for="user_document"> <%= @user.document? ? @user.document_file_name.to_s : "document" %> </label>
       <%= f.file_field :document, class: 'form-control' %>
     </div>
 
