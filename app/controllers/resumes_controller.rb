@@ -1,8 +1,10 @@
 class ResumesController < ApplicationController
   require 'zip'
+  before_action :authenticate_user!
 
   def index
     @users = User.where.not(document_file_name: nil)
+    authorize User ## UserPolicy::index?
   end
 
   def edit
