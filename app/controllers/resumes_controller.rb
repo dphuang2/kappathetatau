@@ -1,6 +1,6 @@
 class ResumesController < ApplicationController
   require 'zip'
-  before_action :authenticate_user!
+  rescue_from ActionController::ParameterMissing, :with => :no_file_attached
 
   def index
     @users = User.where.not(document_file_name: nil)
@@ -44,6 +44,10 @@ class ResumesController < ApplicationController
 
   def user_params
     params.require(:user).permit(:major, :year, :document)
+  end
+
+  def no_file_attached
+    redirect_to edit_path, alert: "No file was attached."
   end
 
 end
