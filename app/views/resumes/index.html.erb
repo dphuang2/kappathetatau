@@ -5,26 +5,29 @@
     <thead>
       <tr>
         <th>Name</th>
+        <th>Resume</th>
         <th>Email</th>
         <th>Major</th>
         <th>Graduation Year</th>
-        <th>Resume</th>
       </tr>
     </thead>
     <tbody>
       <% @users.each do |u| %>
         <a href="/users/<%=u.id%>">
           <tr>
-            <th>
-
-        <a href="/users/<%=u.id%>">
-          <%= u.name %>
-        </a>
-        </th>
+            <th> <!-- Name -->
+              <a href="/users/<%=u.id%>">
+                <%= u.name %>
+              </a>
+            </th>
+            <th> <!-- Document -->
+              <a href="<%= u.document.url(:original) %>">
+                <%= image_tag u.document.url(:thumbnail) %>
+              </a>
+            </th> <!-- Info -->
             <th><%= u.email %></th>
             <th><%= u.major %></th>
             <th><%= u.year %></th>
-            <th><%= image_tag u.image.url(:table) %></th>
           </tr>
         </a>
       <% end %>

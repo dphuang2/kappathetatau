@@ -12,8 +12,8 @@ class User < ApplicationRecord
     self.role ||= :brother
   end
 
-  has_attached_file :image, styles: { large: "600x600>", medium: "300x300>", thumb: "150x150#", table: "50x50#" }
-  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+  has_attached_file :document, styles: {thumbnail: ["40x40#", :png]}
+  validates_attachment :document, content_type: { content_type: "application/pdf" }
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
