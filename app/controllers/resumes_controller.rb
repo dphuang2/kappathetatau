@@ -27,13 +27,13 @@ class ResumesController < ApplicationController
 
   def download
     @users = User.where.not(document_file_name: nil)
-    redirect_to @users.first.document.url(:original, false_)
+    redirect_to @users.first.document.url(:original, false)
     zipfile_name = "Resumes.zip"
     Zip::File.open(zipfile_name, Zip::File::CREATE) do |zipfile|
       @users.each do |u|
         puts u.document_file_name
         puts u.document.url(:original, false)
-        zipfile.add(u.document_file_name, u.document.url(:original, false))
+        zipfile.add(u.document_file_name, "/public"+u.document.url(:original, false))
       end
     end
   end
