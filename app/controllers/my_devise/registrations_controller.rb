@@ -18,7 +18,7 @@ class MyDevise::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/edit
    def edit
-     authorize User
+     authorize User # UserPolicy::edit?
      super
    end
 
