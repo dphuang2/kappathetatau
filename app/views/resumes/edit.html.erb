@@ -1,6 +1,6 @@
 <div class="authform">
   <%= form_for @user, url: upload_path, html: { multipart: true }, method: "post" do |f| %>
-    <h3> Upload Resume </h3>
+    <h3>Upload Resume</h3>
 
     <div class="form-group">
       <%= f.label :image %>
@@ -8,5 +8,23 @@
     </div>
 
     <%= f.submit "Upload", class: "button right"%>
+  <% end %>
+
+  <%= form_for @user, url: info_path, html: { multipart: true }, method: "post" do |f| %>
+
+    <h3> Edit Info </h3>
+
+    <div class="form-group">
+      <%= f.label :major %>
+      <%= f.collection_select :major, User::MAJORS.map { |value| [ value, value ] }, :first, :second, {prompt: @user.major? ? @user.major : "Select Major" }, {class: "form-control"}%>
+
+    </div>
+
+    <div class="form-group">
+      <%= f.label :graduation_date %>
+      <%= f.collection_select :year, User::GRADUATION.map { |value| [ value, value ] }, :first, :second, {prompt: @user.year? ? @user.year : "Select Year" }, {class: "form-control"}%>
+    </div>
+
+    <%= f.submit "Update", class: "button right"%>
   <% end %>
 </div>

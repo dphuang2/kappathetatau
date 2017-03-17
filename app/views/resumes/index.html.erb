@@ -1,5 +1,39 @@
 <% @users.each do |u| %>
-  <a href='/users/<%=u.id%>'>
-    <%= image_tag u.image.url %>
-  </a>
 <% end %>
+<div class="table-responsive">
+  <table id="resume-table" class="table table-condensed table-hover tablesorter">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Major</th>
+        <th>Graduation Year</th>
+        <th>Resume</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |u| %>
+        <a href="/users/<%=u.id%>">
+          <tr>
+            <th>
+
+        <a href="/users/<%=u.id%>">
+          <%= u.name %>
+        </a>
+        </th>
+            <th><%= u.email %></th>
+            <th><%= u.major %></th>
+            <th><%= u.year %></th>
+            <th><%= image_tag u.image.url(:table) %></th>
+          </tr>
+        </a>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $('#resume-table').tablesorter();
+  });
+</script>

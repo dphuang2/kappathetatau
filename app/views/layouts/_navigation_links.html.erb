@@ -6,10 +6,7 @@
 
 <% if current_user.try(:brother?) %>
   <li>
-    <a href="<%=upload_path%>">Upload Resume</a>
-  </li>
-  <li>
-    <a href="#">Change Info</a>
+    <a href="<%=edit_path%>">Edit Info</a>
   </li>
 <% end %>
 

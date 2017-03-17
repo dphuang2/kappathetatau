@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   }
   resources :users
   get '/resumes', to: 'resumes#index'
-  get '/upload', to: 'resumes#edit'
+  get '/edit', to: 'resumes#edit'
   post '/upload', to: 'resumes#upload'
+  post '/info', to: 'resumes#info'
 end
