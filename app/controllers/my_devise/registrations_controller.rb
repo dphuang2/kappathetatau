@@ -17,8 +17,8 @@ class MyDevise::RegistrationsController < Devise::RegistrationsController
    end
 
   # GET /resource/edit
-   def edit
-     authorize User # UserPolicy::edit?
+   def edit # Do not allow employers to ever reach Account Edit page
+     authorize User # UserPolicy::edit? 
      super
    end
 

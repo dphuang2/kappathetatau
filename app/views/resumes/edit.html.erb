@@ -1,0 +1,12 @@
+<div class="authform">
+  <%= form_for @user, url: upload_path, html: { multipart: true }, method: "post" do |f| %>
+    <h3> Upload Resume </h3>
+
+    <div class="form-group">
+      <%= f.label :image %>
+      <%= f.file_field :image, class: 'form-control' %>
+    </div>
+
+    <%= f.submit "Upload", class: "button right"%>
+  <% end %>
+</div>

@@ -1,3 +1,5 @@
-<div class="container">
-  hello
-</div>
+<% @users.each do |u| %>
+  <a href='/users/<%=u.id%>'>
+    <%= image_tag u.image.url %>
+  </a>
+<% end %>
