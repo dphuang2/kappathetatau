@@ -8,6 +8,7 @@ class ResumesController < ApplicationController
   end
 
   def edit
+    authorize User
     @user = User.find(current_user.id)
   end
 
