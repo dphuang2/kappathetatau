@@ -4,9 +4,10 @@
       <tr>
         <th>Name</th>
         <th>Resume</th>
-        <th>Email</th>
         <th>Major</th>
+        <th>Email</th>
         <th>Graduation Year</th>
+        <th>City</th>
       </tr>
     </thead>
     <tbody>
@@ -23,9 +24,10 @@
                 <%= image_tag u.document.url(:thumbnail) %>
               </a>
             </th> <!-- Info -->
-            <th><%= u.email %></th>
-            <th><%= u.major %></th>
-            <th><%= u.year %></th>
+            <th><%= field_or_nil u.major %></th>
+            <th><%= field_or_nil u.email %></th>
+            <th><%= field_or_nil u.year %></th>
+            <th><%= field_or_nil u.city %></th>
           </tr>
         </a>
       <% end %>

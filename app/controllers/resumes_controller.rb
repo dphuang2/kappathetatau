@@ -43,7 +43,7 @@ class ResumesController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:major, :year, :document)
+    params.require(:user).permit(:major, :year, :document, :city)
   end
 
   def no_file_attached

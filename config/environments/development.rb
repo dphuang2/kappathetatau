@@ -51,6 +51,18 @@ Rails.application.configure do
     user_name: Rails.application.secrets.email_provider_username,
     password: Rails.application.secrets.email_provider_password
   }
+
+  ## Amazon S3 Bucket config
+  #config.paperclip_defaults = {
+    #storage: :s3,
+    #s3_credentials: {
+      #bucket: ENV["S3_BUCKET_NAME"],
+      #access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
+      #secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
+      #s3_region: ENV.fetch('AWS_REGION'),
+    #}
+  #}
+
   # ActionMailer Config
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   config.action_mailer.delivery_method = :smtp

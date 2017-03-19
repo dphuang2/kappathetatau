@@ -3,7 +3,7 @@
     <h3>Upload Resume</h3>
 
     <div class="form-group">
-      <label for="user_document"> <%= @user.document? ? @user.document_file_name.to_s : "document" %> </label>
+      <label for="user_document"> <%= @user.document? ? @user.document_file_name.to_s : "Document" %> </label>
       <%= f.file_field :document, class: 'form-control' %>
     </div>
 
@@ -23,6 +23,11 @@
     <div class="form-group">
       <%= f.label :graduation_year %>
       <%= f.collection_select :year, User::GRADUATION.map { |value| [ value, value ] }, :first, :second, {prompt: @user.year? ? @user.year : "Select Year" }, {class: "form-control"}%>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :city %>
+      <%= f.text_field :city, class: 'form-control' %>
     </div>
 
     <%= f.submit "Update", class: "button right"%>
