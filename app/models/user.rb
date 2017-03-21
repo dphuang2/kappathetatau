@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  after_initialize :set_default, :if => :new_record?
 
   MAJORS = ["Aerospace Engineering (AE)", "Agricultural Engineering (AgE)", "Bioengineering (BioE)", "Chemical and Biomolecular Engineering (ChBE)", "Civil and Environmental Engineering (CEE)", "Computer Engineering (CompE)", "Computer Science (CS)", "Electrical Engineering (EE)", "Engineering Mechanics (EM)", "Engineering Physics (EP)", "General Engineering (GE)", "Industrial Engineering (IE)", "Materials and Science Engineering (MatSE)", "Mechanical Engineering (ME)", "Nuclear, Plasma, and Radiological Engineering (NPRE)"]
 
@@ -6,10 +7,9 @@ class User < ApplicationRecord
 
   enum role: [:employer, :brother, :admin]
 
-  after_initialize :set_default_role, :if => :new_record?
-
-  def set_default_role
+  def set_default
     self.role ||= :brother
+    self.private = false if self.private.nil?
   end
 
   has_attached_file :document, styles: {thumbnail: ["40x40#", :png]}
