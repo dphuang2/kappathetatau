@@ -30,6 +30,14 @@
       <%= f.text_field :city, class: 'form-control' %>
     </div>
 
+    <fieldset>
+      <p>Check this box if you do not want other brothers to see your resume on the "Resumes" tab.</p>
+      <div class="form-group">
+        <%= f.label :private %>
+        <%= f.check_box :private %>
+      </div>
+    </fieldset>
+
     <%= f.submit "Update", class: "button right"%>
   <% end %>
 </div>

@@ -4,8 +4,13 @@ class ResumesController < ApplicationController
   rescue_from ActionController::ParameterMissing, :with => :no_file_attached
 
   def index
-    @users = User.where.not(document_file_name: nil)
-    authorize User ## UserPolicy::index?
+    @user = User.find(current_user.id)
+    if @user.brother?
+      @users = User.where.not(document_file_name: nil, private: true)
+    else
+      @users = User.where.not(document_file_name: nil)
+    end
+    authorize User ## UserPolicy::index
   end
 
   def edit
@@ -45,7 +50,7 @@ class ResumesController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:major, :year, :document, :city)
+    params.require(:user).permit(:major, :year, :document, :city, :private)
   end
 
   def no_file_attached
