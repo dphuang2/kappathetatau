@@ -34,7 +34,7 @@
       <p>Check this box if you do not want other brothers to see your resume on the "Resumes" tab.</p>
       <div class="form-group">
         <%= f.label :private %>
-        <%= f.check_box :private %>
+        <%= f.check_box :private, checked: @user.private %>
       </div>
     </fieldset>
 
