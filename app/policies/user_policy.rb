@@ -7,15 +7,11 @@ class UserPolicy
   end
 
   def edit?
-    current_user ? !@current_user.employer? : false
+    !@current_user.employer?
   end
 
   def index?
-    if current_user
-      @current_user.admin? || @current_user.employer? || @current_user.brother? 
-    else
-      false
-    end
+    @current_user.admin? || @current_user.employer? || @current_user.brother? 
   end
 
   def show?

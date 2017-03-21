@@ -1,5 +1,6 @@
 class ResumesController < ApplicationController
   require 'zip'
+  before_action :authenticate_user!
   rescue_from ActionController::ParameterMissing, :with => :no_file_attached
 
   def index
