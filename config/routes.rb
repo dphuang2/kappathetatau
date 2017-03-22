@@ -10,4 +10,12 @@ Rails.application.routes.draw do
   get '/download', to: 'resumes#download'
   post '/upload', to: 'resumes#upload'
   post '/info', to: 'resumes#info'
+
+  authenticated :user do
+    root 'resumes#index', as: :authenticated_root
+  end
+
+  devise_scope :user do
+    root to: "devise/sessions#new"
+  end
 end
