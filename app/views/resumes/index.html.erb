@@ -12,12 +12,15 @@
     </thead>
     <tbody>
       <% @users.each do |u| %>
-        <a href="/users/<%=u.id%>">
           <tr>
             <th> <!-- Name -->
-              <a href="/users/<%=u.id%>">
+              <% if u.linkedin && u.linkedin != "" %>
+              <a target="_blank" href="<%=u.linkedin%>">
                 <%= u.name %>
               </a>
+            <% else %>
+                <%= u.name %>
+              <% end %>
             </th>
             <th> <!-- Document -->
               <a target="_blank" href="<%= u.document.url(:original) %>">
